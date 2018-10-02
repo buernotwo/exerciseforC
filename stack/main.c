@@ -9,7 +9,7 @@ int main()
     int arrayT[MAX];
     int *pInt = NULL;
 
-    initStack();
+    initStack();
     for(int i = 0; i < MAX; i++)
     {
         arrayT[i] = i;
