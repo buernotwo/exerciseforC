@@ -98,8 +98,8 @@ int isEmpty()
 }
 
 /*returns the top element of the stack without removing it*/
-void *top()
-{
+void *top()
+{
     return *(array+offset);
 }
 

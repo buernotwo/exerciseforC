@@ -11,7 +11,7 @@ int main()
 
     initStack();
     for(int i = 0; i < MAX; i++)
-    {
+    {
         arrayT[i] = i;
         push((arrayT + i));
         printf("%x:%d\n", (arrayT+i), arrayT[i]);
