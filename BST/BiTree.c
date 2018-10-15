@@ -33,10 +33,15 @@ bool searchBiTree(BiTree T, int key, BiTree pre, BitNode *B)
 
 bool insertBitNode(BiTree T, int key)
 {
-    BitNode *Bn;
+    BitNode *Bn = NULL, *tmp = NULL;
     if(!searchBiTree(T, key, NULL, Bn))
     {
-        BitNode *tmp = (BitNode *)malloc(sizeof(BitNode));
+        tmp = (BitNode *)malloc(sizeof(BitNode));
+        if(!tmp)
+        {
+            printf("malloc failed!");
+            return false;
+        }
         tmp->data = key;
         tmp->leftChild = tmp->rightChild = NULL;
         if(NULL == Bn)
@@ -66,8 +71,8 @@ int main(){
     BitNode *B;
     BiTree T = NULL;
     bool result = searchBiTree(T, 1, NULL, B);
-    printf("Test...%d", result);
-    //bool isExecuteInsert = insertBitNode(T, 20);
-    //printf("----...%d", isExecuteInsert);
+    printf("Test...%d\n", result);
+    bool isExecuteInsert = insertBitNode(T, 20);
+    printf("----...%d, %d", isExecuteInsert, T);
     return 0;
 }
