@@ -129,16 +129,25 @@ int main(){
         printf("\nCongratulations! you find it.value is : %d\n", B->data);
     else
         printf("\nWhat a pity! your data 37 is not in BiTree.\n");
-    
-    bool isExecuteInsert = insertBitNode(&T, 20);
-    if(isExecuteInsert)
-        printf("\nInsert success.\n");
-    else
-        printf("\nInsert failed.\n");
 
-    printf("----------\n");
+    int array[] = {32, 24, 15, 24, 18, 29, 100, 1000, 54, 65, 89, 66, 37};
+    bool isExecuteInsert = false;
+    for(int i = 0; i < (sizeof(array)/sizeof(array[0])); i++)
+    {
+        isExecuteInsert = insertBitNode(&T, array[i]);
+        if(isExecuteInsert)
+            printf("\narray[%d]=%d Insert success.\n", i, array[i]);
+        else
+            printf("\narray[%d]=%d Insert failed.\n", i, array[i]);
+    }
+    for(int j=0; j<(sizeof(array)/sizeof(array[0])); j++)
+        printf("-\t");
+    printf("\n");
     printBiTree(T);
-    printf("\n----------\n");
+    printf("\n");
+    for(int j=0; j<(sizeof(array)/sizeof(array[0])); j++)
+        printf("-\t");
+    printf("\n");
     
     return 0;
 }
