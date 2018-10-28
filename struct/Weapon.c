@@ -20,7 +20,7 @@ struct weapon* createWeapon(void)
     scanf("%d", &p1->price);
     scanf("%d", &p1->attack);
     int n = 0;
-    while((strcmp("", p1->name)!=0) && (p1->price!=0) && (p1->attack != 0))
+    while((p1->price!=0) && (p1->attack != 0))
     {
         n++;
         if(n==1)
@@ -54,7 +54,6 @@ int main(int argc, const char *argv[]){
         head = head->next;
     }
     #endif
-
     /***
      * test createWeapon(){}
      */
